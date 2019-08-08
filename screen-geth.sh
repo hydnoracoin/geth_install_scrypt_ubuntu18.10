@@ -14,7 +14,8 @@ displayErr() {
 }
 IP=`ip addr list eth0 | grep "  inet " | head -n 1 | cut -d " " -f 6 | cut -d / -f 1`
 RPCPORT="18504"
-screen -dmS geth geth --datadir .hora  --rpc --rpcaddr "0.0.0.0" --rpcport "$RPCPORT" --networkid 19783111 --syncmode 'full' --rpcapi "admin,db,eth,miner,net,txpool,personal,web3" console
+cd ~
+screen geth --datadir /home/hora/.mnhora  --rpc --rpcaddr "0.0.0.0" --rpcport "18504" --networkid 19783111 --syncmode 'full' --rpcapi "admin,db,eth,miner,net,txpool,personal,web3" console
 
 output " "
 output "You Node Address: http://$IP:$RPCPORT"

@@ -1,15 +1,5 @@
 #!/bin/bash
-################################################################################
-# Original Author:   crombiecrunch
-# Fork Author: manfromafar
-# Current Author: Xavatar
-# Web:     
-#
-# Program:
-#   Install yiimp on Ubuntu 17.10 running Nginx, MariaDB, and php7.1.x
-# 
-# 
-################################################################################
+
 output() {
     printf "\E[0;33;40m"
     echo $1
@@ -22,7 +12,7 @@ displayErr() {
     echo
     exit 1;
 }
-
+    cd ~
     output " "
     output "Updating system and installing required packages."
     output " "
@@ -65,11 +55,11 @@ displayErr() {
     output " "
     sleep 3
     sudo cp build/bin/geth /usr/bin/
-    cd
-    mkdir .hora
+    cd ~
+    mkdir /home/hora/.mnhora
     wget https://github.com/hydnoracoin/progminer/releases/download/v1.1.3/genesis.json
-    geth --datadir .hora init genesis.json
+    geth --datadir /home/hora/.mnhora init genesis.json
     output " "
-    output "The end please run screen-geth.sh"
+    output "The end please run: sudo bash screen-geth.sh"
     output " "
 
